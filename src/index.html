@@ -30,28 +30,7 @@
 			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
 			https://github.com/Esri/map-journal-storytelling-template-js
 		-->
-		
-		<script type="text/javascript">
-			//-------------------------------------------------------------------------------------------
-			//     Application configuration (ignored on ArcGIS Online, Portal and during development)
-			//-------------------------------------------------------------------------------------------
-			var configOptions = {
-				// Enter an application ID created through the Map Journal builder 
-				appid: "",
-				// Optionally to secure Journal's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
-				// User will need to sign-in to access the viewer even if your application is public
-				oAuthAppId: "",
-				// Optionally to be able to use the appid URL parameter, configure here the list of application author 
-				//  whose application are allowed to be viewed by this Map Journal deployment
-				// This is the Portal username of the Journal owner (e.g. ["user1"], ["user1", "user2"])
-				authorizedOwners: [""]
-			};
-			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required  
-			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapJournal/ or /apps/MapJournal/. 
-			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
-			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
-			//  on Portal for ArcGIS as /home/MapJournal/ or /apps/MapJournal/, that configuration is available in ../commonConfig.js
-		</script>
+		<script type="text/javascript" src="config/defaults.js"></script>	
 		
 		<!--
 		
@@ -61,16 +40,32 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.4.0',
+				version: '1.4.1',
 				pathJSAPI: '//js.arcgis.com/3.14/'
 			};
 		</script>
 	</head>
 	<body class="claro">
 		<style>
-			/* CUSTOM CSS RULES */
+			.width {
+				width:220px!important;
+			}
+			#wb-body-sec #wb-main, #wb-body-sec-sup #wb-main, #wb-body-sec #wb-main-in, #wb-body-sec-sup #wb-main-in, #wb-body #gcwu-content, #wb-core-in, #gcwu-gcnb-in, #gcwu-bnr-in, #gcwu-psnb-in, #gcwu-bc-in, #gcwu-gcft-in, #gcwu-sft-in, #gcwu-psnb .mb-menu, #wb-body #wb-main {
+				width: 97%;
+			}
+
+body {
+  overflow:scroll; 
+}
+
+.legend table th, table td {
+    border-style: none;
+    border-width: 0;
+    padding: 0;
+    vertical-align: default;
+}		
+		/* CUSTOM CSS RULES */
 		</style>
-		
 		<!-- Builder top panel is injected here -->
 		<div id="builderPanel" class="hide mainViewAboveMap"></div>
 		

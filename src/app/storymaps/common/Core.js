@@ -692,16 +692,26 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				$("#header").css("display", isMobileView ? "none" : "block");
 				$("#fatalError").css("display", isMobileView ? "block": "none");
 			}
-			
+
+			var wetVerticalOffset = 0;
+
+			if($("#wb-head").length > 0) {
+				wetVerticalOffset += $("#wb-head").height();
+			}
+			// We want to have a larger offset then JUST the size of the header.
+			// We need to see a bit of the footer, so the user knows it is there
+			wetVerticalOffset += 100;
+
+
 			if( ! app.initScreenIsOpen )
-				$("#contentPanel").height(heightViewport - heightAboveMap);
+				$("#contentPanel").height(heightViewport - heightAboveMap - wetVerticalOffset);
 			//$("#contentPanel").width(widthViewport);
 			
 			_mainView.resize({
 				isMobileView: isMobileView,
 				isOnMobileMapView: isOnMobileMapView,
 				width: widthViewport,
-				height: heightViewport - heightAboveMap
+				height: heightViewport - heightAboveMap - wetVerticalOffset
 			});
 			
 			if (app.isInBuilder){
