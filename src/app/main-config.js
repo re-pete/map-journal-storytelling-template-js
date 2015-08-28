@@ -42,9 +42,23 @@ function defineDojoConfig()
 	var path1 = location.pathname.replace(/\/[^/]+$/, '/'),
 		path2 = location.pathname.replace(/\/[^/]+$/, '');
 
+	var appIdEn = configOptions.appid;
+	var appIdFr = configOptions.appidFr;
+	var lang = getUrlVar('lang');
+	var locale = lang === 'fr' ? 'fr' : 'en';
+	var appId = '';
+	if(appIdFr && locale === 'fr') {
+		appId = appIdFr;
+	} else {
+		appId = appIdEn;
+	}
+
+	configOptions.appid = appId;
+
 	window.dojoConfig = {
 		parseOnLoad: true,
 		isDebug: false,
+		locale: locale,
 		useDeferredInstrumentation: true,
 		cacheBust: ! app.isProduction,
 		packages: [

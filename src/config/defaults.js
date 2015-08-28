@@ -4,6 +4,7 @@
 var configOptions = {
 	// Enter an application ID created through the Map Journal builder 
 	appid: "2b9e514d1eab42b984864a34ad5e9de8",
+	appidFr: "5562425887f8478f82dc3fdbf4acb44d",
 	// Optionally to secure Journal's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
 	// User will need to sign-in to access the viewer even if your application is public
 	oAuthAppId: "",
