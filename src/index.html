@@ -64,6 +64,25 @@
 				padding: 0;
 				vertical-align: default;
 			}
+			
+			.skiptomain {
+				position:absolute;
+				color: #ffffff;
+				background-color: #000000;
+				height: 1px;
+				width: 1px;
+				text-align: left;
+				overflow: hidden;
+				z-index: 100;
+			}
+			
+			div.skiptomain:active, 
+			div.skiptomain:focus, 
+			div.skiptomain:hover {
+				width: auto; 
+				height: auto; 
+				overflow: visible; 
+			}
 		/* CUSTOM CSS RULES */
 		</style>
 		<!-- Builder top panel is injected here -->
@@ -319,13 +338,95 @@
 				/*
 				 * Custom Javascript to be executed while the application is initializing goes here
 				 */
+				 
+				 var handleEnterKeyAsClick = function(evt) {
+					if(evt.keyCode === 13) {
+						this.click();
+					}
+				 }
 				
 				// The application is ready
 				topic.subscribe("tpl-ready", function(){
 					/*
 					 * Custom Javascript to be executed when the application is ready goes here
 					 */
+					 
+					 // Make each text section able to reach focus programatically
+					 $("div.section").attr('tabIndex',-1)
+					 
+					 // Make the navigation dots keyboard accessible
+					$(".navDotsUp,.navDotsDown,.dot")
+						.attr('tabIndex',0)
+						.attr('role','button')
+						.on('keypress',function(evt) {
+							if(evt.keyCode === 13) {
+								this.click();
+								$(".section.active").focus();
+							}
+						});
+					// Make the navigation dots have proper labels
+					
+					// Add a link to the end of each section to move focus to the media container
+					$("div.section > div.content").append("<div class='skiptomain'>Move to main content</div>");
+					$("div.content > div.skiptomain").attr('tabIndex',0).on('keypress',function(evt) {
+						if(evt.keyCode === 13) {
+							$(".mainMediaContainer.active").focus();
+						}
+					});
+					
+					// Add a link to the beginning of each media container to move focus back to it's section
+					$("div.mainMediaContainer").prepend("<div class='skiptomain'>Move back to text section</div>");
+					$("div.mainMediaContainer > div.skiptomain").attr('tabIndex',0).on('keypress', function(evt) {
+						if(evt.keyCode === 13) {
+							$(".section.active").focus();
+						}
+					});
+					
+					// Make each  media container able to receive focus
+					$("div.mainMediaContainer").attr('tabIndex',-1);
+					
+					// Make the blue 'Down' arrow have alt text
+					$(".scrollInner").attr('title', i18n.viewer.sideLayout.scroll);
+					
+					// Each paragraph <p> element is given a tabindex by ESRI's code.  It shouldnt.
+					$("p").attr('tabindex','');
+					
 				});
+
+
+				// The map's zoom buttons/etc don't exist until it is loaded
+				// So add the necessary WCAG stuff to each map after it's loaded
+				topic.subscribe("story-loaded-map", function(result){
+					
+					// Make the zoom out/zoom in/home buttons keyboard accessible
+					// Note that selecting .esriSimpleSliderIncrementButton selects Zoom in AND Home
+					$(".esriSimpleSliderIncrementButton, .esriSimpleSliderDecrementButton")
+						.attr('tabindex',0)
+						.attr('role','button')
+						.on('keypress',handleEnterKeyAsClick);
+					$(".esriSimpleSliderIncrementButton:has(div)").attr('title','Default extent / Etendue par défaut');
+					
+					// Make the close keys on windows keyboard accessible
+					$(".close")
+						.attr('tabindex',0)
+						.attr('role','button')
+						.attr('aria-label',i18n.viewer.common.close)
+						.on('keypress',handleEnterKeyAsClick);
+					
+					// Make the expand/contract icons on windows keyboard accessible
+					$(".glyphicon-chevron-up, .glyphicon-chevron-down")
+						.attr('tabindex',0)
+						.attr('role','button')
+						.attr('aria-label','Expand/minimize')
+						.on('keypress',handleEnterKeyAsClick);
+					
+					
+					if ( result.index !== null )
+					  console.log("The map", result.id, "has been loaded from the section", result.index);
+					else
+					  console.log("The map", result.id, "has been loaded from a Main Stage Action");
+				});
+				
 			});
 		</script>
 	</body>
