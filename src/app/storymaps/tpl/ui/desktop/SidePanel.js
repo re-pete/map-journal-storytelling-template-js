@@ -264,6 +264,7 @@ define(["lib-build/tpl!./SidePanelSection",
 					lastTabElement = lastTabElement.siblings(".content").find("[tabindex=0]").last();
 				
 				// Tab on the last element has to navigate to the header
+				/* Commented out - we want to be able to keep tabbing through
 				lastTabElement.on('keydown', function(e) {
 					if( e.keyCode === 9 && ! e.shiftKey ) {
 						container.find(".header").removeAttr("aria-hidden");
@@ -285,6 +286,7 @@ define(["lib-build/tpl!./SidePanelSection",
 						return false;
 					}
 				});
+				*/
 			}
 			
 			function createSectionBlock(/*editEl,*/ index, status, content, title)
