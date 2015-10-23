@@ -69,7 +69,7 @@
 				position:absolute;
 				color: #ffffff;
 				background-color: #000000;
-				height: 1px;
+				height: 20px;
 				width: 1px;
 				text-align: left;
 				overflow: hidden;
@@ -83,6 +83,9 @@
 				height: auto; 
 				overflow: visible; 
 			}
+            .navDotsInner {
+                background-color: #999;
+            }
 		/* CUSTOM CSS RULES */
 		</style>
 		<!-- Builder top panel is injected here -->
@@ -375,11 +378,23 @@
 					});
 					
 					// Add a link to the beginning of each media container to move focus back to it's section
-					$("div.mainMediaContainer").prepend("<div class='skiptomain'>Move back to text section</div>");
+					$("div.mainMediaContainer").prepend("<div class='skiptomain'>Move back to text section</div>").on('keypress', function(evt) {
+						if(evt.shiftKey && evt.keyCode === 9) {
+                            // If they shift tab while on this element, move back to active section
+                            // Return false to consume the tab keypress 
+                            $(".section.active").focus();
+                            return false;
+                        }
+                    });
 					$("div.mainMediaContainer > div.skiptomain").attr('tabIndex',0).on('keypress', function(evt) {
 						if(evt.keyCode === 13) {
 							$(".section.active").focus();
-						}
+						} else if(evt.shiftKey && evt.keyCode === 9) {
+                            // If they shift tab while on this element, move back as if they clicked it
+                            // Return false to consume the tab keypress 
+                            $(".section.active").focus();
+                            return false;
+                        }
 					});
 					
 					// Make each  media container able to receive focus
@@ -389,8 +404,10 @@
 					$(".scrollInner").attr('title', i18n.viewer.sideLayout.scroll);
 					
 					// Each paragraph <p> element is given a tabindex by ESRI's code.  It shouldnt.
-					$("p").attr('tabindex','');
-					
+					$("div.content p").removeAttr('tabindex');
+
+                    // Each unordered list <ul> element is being given a tabindex by ESRI's code.  It shouldn't.
+                    $("div.content ul").removeAttr("tabindex")
 				});
 
 
