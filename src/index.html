@@ -373,19 +373,12 @@
 					$("div.section > div.content").append("<div class='skiptomain'>Move to main content</div>");
 					$("div.content > div.skiptomain").attr('tabIndex',0).on('keypress',function(evt) {
 						if(evt.keyCode === 13) {
-							$(".mainMediaContainer.active").focus();
+							$(".mainMediaContainer.active div.skiptomain").focus();
 						}
 					});
 					
 					// Add a link to the beginning of each media container to move focus back to it's section
-					$("div.mainMediaContainer").prepend("<div class='skiptomain'>Move back to text section</div>").on('keypress', function(evt) {
-						if(evt.shiftKey && evt.keyCode === 9) {
-                            // If they shift tab while on this element, move back to active section
-                            // Return false to consume the tab keypress 
-                            $(".section.active").focus();
-                            return false;
-                        }
-                    });
+					$("div.mainMediaContainer").prepend("<div class='skiptomain'>Move back to text section</div>");
 					$("div.mainMediaContainer > div.skiptomain").attr('tabIndex',0).on('keypress', function(evt) {
 						if(evt.keyCode === 13) {
 							$(".section.active").focus();
@@ -397,9 +390,6 @@
                         }
 					});
 					
-					// Make each  media container able to receive focus
-					$("div.mainMediaContainer").attr('tabIndex',-1);
-					
 					// Make the blue 'Down' arrow have alt text
 					$(".scrollInner").attr('title', i18n.viewer.sideLayout.scroll);
 					
@@ -407,7 +397,7 @@
 					$("div.content p").removeAttr('tabindex');
 
                     // Each unordered list <ul> element is being given a tabindex by ESRI's code.  It shouldn't.
-                    $("div.content ul").removeAttr("tabindex")
+                    $("div.content ul").removeAttr("tabindex");
 				});
 
 
