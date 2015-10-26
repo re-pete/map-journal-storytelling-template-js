@@ -67,8 +67,8 @@
 			
 			.skiptomain {
 				position:absolute;
-				color: #ffffff;
-				background-color: #000000;
+				color: rgba(255,255,255,0);
+				background-color: rgba(0,0,0,0);
 				height: 20px;
 				width: 1px;
 				text-align: left;
@@ -79,12 +79,21 @@
 			div.skiptomain:active, 
 			div.skiptomain:focus, 
 			div.skiptomain:hover {
+                color: rgba(255,255,255,1);
+                background-color: rgba(0,0,0,1);
 				width: auto; 
 				height: auto; 
 				overflow: visible; 
 			}
             .navDotsInner {
                 background-color: #999;
+            }
+            .esriAttributionList {
+                color: #000;
+                background-color: rgba(255,255,255,1);
+            }
+            .navDots .navDotsNav {
+                opacity: 1.0;
             }
 		/* CUSTOM CSS RULES */
 		</style>
@@ -355,7 +364,7 @@
 					 */
 					 
 					 // Make each text section able to reach focus programatically
-					 $("div.section").attr('tabIndex',-1)
+					 $("div.section").attr('tabIndex',-1);
 					 
 					 // Make the navigation dots keyboard accessible
 					$(".navDotsUp,.navDotsDown,.dot")
@@ -427,7 +436,11 @@
 						.attr('aria-label','Expand/minimize')
 						.on('keypress',handleEnterKeyAsClick);
 					
-					
+                    // The legend/overview sets its colors directly on the element, so it is more annoying to override.
+                    $(".titleBtn, .collapseBtn").css({
+                        color: "#fff"
+                    });
+
 					if ( result.index !== null )
 					  console.log("The map", result.id, "has been loaded from the section", result.index);
 					else
