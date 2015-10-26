@@ -433,14 +433,14 @@
 					$(".close")
 						.attr('tabindex',0)
 						.attr('role','button')
-						.attr('aria-label',i18n.viewer.common.close)
+						.attr('title',i18n.viewer.common.close)
 						.on('keypress',handleEnterKeyAsClick);
 					
 					// Make the expand/contract icons on windows keyboard accessible
 					$(".glyphicon-chevron-up, .glyphicon-chevron-down")
 						.attr('tabindex',0)
 						.attr('role','button')
-						.attr('aria-label','Expand/minimize')
+						.attr('title','Expand/minimize')
 						.on('keypress',handleEnterKeyAsClick);
 					
                     // The legend/overview sets its colors directly on the element, so it is more annoying to override.
