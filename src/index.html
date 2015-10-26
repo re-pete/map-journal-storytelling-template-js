@@ -386,7 +386,7 @@
                     });
 					
 					// Add a link to the end of each section to move focus to the media container
-					$("div.section > div.content").append("<div class='skiptomain'>Move to main content</div>");
+					$("div.section > div.content").append("<div class='skiptomain'>Move focus to main content</div>");
 					$("div.content > div.skiptomain").attr('tabIndex',0).on('keypress',function(evt) {
 						if(evt.keyCode === 13) {
 							$(".mainMediaContainer.active div.skiptomain").focus();
@@ -394,7 +394,7 @@
 					});
 					
 					// Add a link to the beginning of each media container to move focus back to it's section
-					$("div.mainMediaContainer").prepend("<div class='skiptomain'>Move back to text section</div>");
+					$("div.mainMediaContainer").prepend("<div class='skiptomain'>Move focus back to side panel</div>");
 					$("div.mainMediaContainer > div.skiptomain").attr('tabIndex',0).on('keypress', function(evt) {
 						if(evt.keyCode === 13) {
 							$(".section.active").focus();
