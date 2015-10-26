@@ -136,7 +136,7 @@
             overflow: visible; 
         }
         .navDotsInner {
-            background-color: #999;
+            background-color: #bbb;
         }
         .esriAttributionList {
             color: #000;
@@ -144,6 +144,18 @@
         }
         .navDots .navDotsNav {
             opacity: 1.0;
+            text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;  
+        }
+        .dot.active {
+            text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;  
         }
     </style>
 	</head>
@@ -445,7 +457,7 @@
 					
                     // The legend/overview sets its colors directly on the element, so it is more annoying to override.
                     $(".titleBtn, .collapseBtn").css({
-                        color: "#fff"
+                        color: "#000"
                     });
 
 					if ( result.index !== null )
