@@ -377,6 +377,13 @@
 							}
 						});
 					// Make the navigation dots have proper labels
+                    $(".navDotsUp,.navDotsDown,.dot").each(function() {
+                        var that = $(this);
+                        // If we set a title it shows up in addition to the fancy alt text
+                        // So we remove the title and let 'aria-label' handle screen readers
+                        that.removeAttr('title');
+                        that.attr('aria-label',that.attr('data-original-title'));
+                    });
 					
 					// Add a link to the end of each section to move focus to the media container
 					$("div.section > div.content").append("<div class='skiptomain'>Move to main content</div>");
