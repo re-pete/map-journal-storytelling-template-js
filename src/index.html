@@ -460,6 +460,62 @@
                         color: "#000"
                     });
 
+                    // Set up keyboard navigation for the map
+                    $(".active .mapContainer.map").attr('tabindex',0).on('keydown', function(evt) {
+                        
+                        // We only want to capture events on the map itself, not
+                        // any of the map's children.
+                        if(evt.target.classList.contains('mapContainer') === false) {
+                            return;
+                        }
+
+                        // shorthand for less typing
+                        var k = dojo.keys;
+                        switch(evt.keyCode) {
+                            // Handle up key
+                            case k.UP_ARROW:
+                            case k.NUMPAD_8:
+                                evt.preventDefault();
+                                app.map.panUp();
+                                break;
+                            // Handle down key
+                            case k.DOWN_ARROW:
+                            case k.NUMPAD_2:
+                                evt.preventDefault();
+                                app.map.panDown();
+                                break;
+                            // Handle left key
+                            case k.LEFT_ARROW:
+                            case k.NUMPAD_4:
+                                evt.preventDefault();
+                                app.map.panLeft();
+                                break;
+                            // Handle right key
+                            case k.RIGHT_ARROW:
+                            case k.NUMPAD_6:
+                                evt.preventDefault();
+                                app.map.panRight();
+                                break;
+                            // Handle zoom in key
+                            case k.NUMPAD_PLUS:
+                            case 187: // equals
+                            case 61:  // equals on firefox
+                                evt.preventDefault();
+                                app.map.setZoom(app.map.getZoom()+1);
+                                break;
+                            // Handle zoom out key
+                            case k.NUMPAD_MINUS:
+                            case 189: // minus
+                            case 173: // minus on firefox
+                                evt.preventDefault();
+                                app.map.setZoom(app.map.getZoom()-1);
+                                break;
+                            default:
+                                // nothing to do - let the event propagate
+                        }
+                    });
+
+
 					if ( result.index !== null )
 					  console.log("The map", result.id, "has been loaded from the section", result.index);
 					else
