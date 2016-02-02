@@ -142,6 +142,9 @@
             color: #000;
             background-color: rgba(255,255,255,1);
         }
+        .titleBtn {
+			color: #000;
+		}
         .navDots .navDotsNav {
             opacity: 1.0;
             text-shadow:
@@ -455,9 +458,11 @@
 						.attr('title','Expand/minimize')
 						.on('keypress',handleEnterKeyAsClick);
 					
-                    // The legend/overview sets its colors directly on the element, so it is more annoying to override.
-                    $(".titleBtn, .collapseBtn").css({
-                        color: "#000"
+                    // Set a null alt tag for map images, so screen readers will ignore
+                    app.map.on('update-end',function() {
+                        $("img.layerTile:not([alt])").attr('alt','');
+                        $("img:not([src])").remove();
+                        $(".loadingIndicator img").attr('alt','Loading / Chargement');
                     });
 
                     // Set up keyboard navigation for the map
