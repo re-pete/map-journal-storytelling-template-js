@@ -700,7 +700,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			}
 			// We want to have a larger offset then JUST the size of the header.
 			// We need to see a bit of the footer, so the user knows it is there
-			wetVerticalOffset += 100;
+			//wetVerticalOffset += 100;
 
 
 			if( ! app.initScreenIsOpen )
