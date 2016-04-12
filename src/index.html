@@ -441,15 +441,13 @@
                             return false;
                         }
 					});
-					
-					// Make the blue 'Down' arrow have alt text
-					$(".scrollInner").attr('title', i18n.viewer.sideLayout.scroll);
-					
-					// Each paragraph <p> element is given a tabindex by ESRI's code.  It shouldnt.
-					$("div.content p").removeAttr('tabindex');
 
-                    // Each unordered list <ul> element is being given a tabindex by ESRI's code.  It shouldn't.
-                    $("div.content ul").removeAttr("tabindex");
+					// Remove the blue 'Down' arrow 
+					$(".scrollInner").remove();
+
+					// <p>,<ul>,<ol>,<h3> elements are given a tabindex by ESRI's code.  They shouldnt.
+					$("div.content p,div.content ul,div.content ol,div.content h3").removeAttr('tabindex');
+
                     // Titles for each section should be a <h2> for screen readers
                     $("div.title").each(function() {
 						this.innerHTML = "<h2>" + this.textContent + "</h2>";
