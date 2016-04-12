@@ -504,15 +504,11 @@
                     // NOTE: <image> and <img> are treated the same in IE
                     // So I had to make this removal more specific
                     // Remove images that have no 'src' but not dynamic ones like the map point icons
-                    $("img:not([src])").each(function(index, element) {
-                        if(!$(element).attr('stroke')) {
-                            $(element).remove();
-                        }
-                    });
+                    $("img.logoImg").remove();
 
                     // Set up keyboard navigation for the map
                     $(".active .mapContainer.map").attr('tabindex',0).on('keydown', function(evt) {
-                        
+
                         // We only want to capture events on the map itself, not
                         // any of the map's children.
                         if(evt.target.classList.contains('mapContainer') === false) {
