@@ -501,6 +501,13 @@
 
                     // Loading indicator needs alt text
                     $(".loadingIndicator img").attr('alt',i18n.viewer.loading.step1);
+                    // NOTE: <image> and <img> are treated the same in IE
+                    // So I had to make this removal more specific
+                    // Remove images that have no 'src' but not dynamic ones like the map point icons
+                    $("img:not([src])").each(function(index, element) {
+                        if(!$(element).attr('stroke')) {
+                            $(element).remove();
+                        }
                     });
 
                     // Set up keyboard navigation for the map
