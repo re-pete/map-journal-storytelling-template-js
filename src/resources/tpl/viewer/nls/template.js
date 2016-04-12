@@ -73,6 +73,14 @@ define({
 				embed: "Embed in web page",
 				embedExplain: "Use the following HTML code to embed the journal in a web page.",
 				size: "Size (width/height):"
+			},
+			customAgs: {
+				homeButton: "Default extent",
+				previousButton: "Previous",
+				nextButton: "Next",
+				toggleChevron: "Expand/minimize",
+				moveToDiv: "Move focus to main content",
+				moveBackDiv: "Move focus back to side panel"
 			}
         }
     }),

@@ -73,6 +73,14 @@
 				embed: "Incorporer dans une page Web",
 				embedExplain: "Utilisez le code HTML suivant pour incorporer le journal dans une page Web.",
 				size: "Taille (largeur/hauteur) :"
+			},
+			customAgs: {
+				homeButton: "Etendue par défaut",
+				previousButton: "Précédent",
+				nextButton: "Suivant",
+				toggleChevron: "{fr}Expand/minimize",
+				moveToDiv: "{fr}Move focus to main content",
+				moveBackDiv: "{fr}Move focus back to side panel"
 			}
         }
     })
