@@ -368,7 +368,7 @@
 				 
 				 var handleEnterKeyAsClick = function(evt) {
 					if(evt.keyCode === 13) {
-						this.click();
+						$(this).trigger("click");
 					}
 				 }
 				
@@ -443,6 +443,13 @@
 						.attr('role','button')
 						.on('keypress',handleEnterKeyAsClick);
 					$(".esriSimpleSliderIncrementButton:has(div)").attr('title','Default extent / Etendue par défaut');
+					// The above doesn't work in IE10 on specifically the +/- buttons.  So write the function by hand
+					$(".esriSimpleSliderIncrementButton").has('span').on('keypress', function() {
+						app.map.setZoom(app.map.getZoom()+1);
+					});
+					$(".esriSimpleSliderDecrementButton").has('span').on('keypress', function() {
+						app.map.setZoom(app.map.getZoom()-1);
+					});
 					
 					// Make the close keys on windows keyboard accessible
 					$(".close")
