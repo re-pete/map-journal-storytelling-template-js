@@ -124,6 +124,7 @@
             text-align: left;
             overflow: hidden;
             z-index: 100;
+            padding: 5px;
         }
         
         div.skiptomain:active, 
@@ -160,6 +161,22 @@
             -1px 1px 0 #000,
             1px 1px 0 #000;  
         }
+        h1.floatingTitle {
+            background-color: unset;
+            border: unset !important;
+            color: #000;
+            font-family: "open_sanssemibold",​sans-serif !important;
+            font-size: 0.8em;
+            font-weight: 400 !important;
+        }
+        h2 {
+			color: #000;
+			font-size: 0.8em;
+		}
+        h3 {
+			color: #000;
+			font-size: 1em;
+		}
     </style>
 	</head>
 	<body class="claro">
@@ -429,6 +446,15 @@
 
                     // Each unordered list <ul> element is being given a tabindex by ESRI's code.  It shouldn't.
                     $("div.content ul").removeAttr("tabindex");
+                    // Titles for each section should be a <h2> for screen readers
+                    $("div.title").each(function() {
+						this.innerHTML = "<h2>" + this.textContent + "</h2>";
+					});
+
+                    // The floating title needs to be a <h1> for screen readers
+                    $("div.appTitle").each(function() {
+						this.innerHTML = "<h1 class='floatingTitle'>" + this.textContent + "</h1>";
+					});
 				});
 
 
