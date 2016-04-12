@@ -459,6 +459,11 @@
                     $("div.appTitle").each(function() {
 						this.innerHTML = "<h1 class='floatingTitle'>" + this.textContent + "</h1>";
 					});
+
+                    // Remove the mobile version of the site
+                    // Screen readers can see it and will read out 
+                    $("#mobileView").attr('aria-hidden','true');
+                    $("#mobileView").attr('hidden','hidden');
 				});
 
 
