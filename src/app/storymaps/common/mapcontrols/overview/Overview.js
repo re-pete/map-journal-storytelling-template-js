@@ -77,7 +77,7 @@ define(["lib-build/tpl!./Overview",
 				
 				// PK - disabling this because it overwrites styles from CSS
 				//container.find(".titleBtn").css("color", appColors.softText);
-				container.find(".settingsGear, .collapseBtn").css("color", appColors.softBtn);
+				//container.find(".settingsGear, .collapseBtn").css("color", appColors.softBtn);
 				
 				container.find(".ovwHighlight").css("border", "3px solid " + appColors.dotNav);
 			};
