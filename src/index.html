@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title></title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		
-		<meta name="fragment" content="!">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		
-		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
-		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
-		
-		<!-- 
-			To correctly reference your Map Journal in search engine:
-			 - create and fill out extensively an ArcGIS Online item that link to your final application
-			 - edit the following four tags as well as the title tag above on line 4
-		-->
-		<meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
-		
-		<!-- Facebook sharing -->
-		<meta property="og:type" content="article"/>
-		<meta property="og:title" content="Story Map Journal"/>
-		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
-		<meta property="og:image" content="http://www.arcgis.com/apps/MapJournal/resources/common/icons/esri-globe.png"/>
-		
-		<!-- 
-			This application is released under the Apache License V2.0 by Esri http://www.esri.com/
-			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
-			https://github.com/Esri/map-journal-storytelling-template-js
-		-->
-		<script type="text/javascript" src="config/defaults.js"></script>	
-		
-		<!--
-		
-			Edit below at your own risk
-		
-		-->
-		
-		<script type="text/javascript">
-			var app = {
-				version: '1.4.1',
-				pathJSAPI: '//js.arcgis.com/3.14/'
-			};
-		</script>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        
+        <meta name="fragment" content="!">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        
+        <link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
+        <link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+        
+        <!-- 
+            To correctly reference your Map Journal in search engine:
+             - create and fill out extensively an ArcGIS Online item that link to your final application
+             - edit the following four tags as well as the title tag above on line 4
+        -->
+        <meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
+        
+        <!-- Facebook sharing -->
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Story Map Journal"/>
+        <meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
+        <meta property="og:image" content="http://www.arcgis.com/apps/MapJournal/resources/common/icons/esri-globe.png"/>
+        
+        <!-- 
+            This application is released under the Apache License V2.0 by Esri http://www.esri.com/
+            Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
+            https://github.com/Esri/map-journal-storytelling-template-js
+        -->
+        <script type="text/javascript" src="config/defaults.js"></script>   
+        
+        <!--
+        
+            Edit below at your own risk
+        
+        -->
+        
+        <script type="text/javascript">
+            var app = {
+                version: '1.4.1',
+                pathJSAPI: '//js.arcgis.com/3.14/'
+            };
+        </script>
     <!-- Loading -->
     <style>
         #loadingOverlay {
@@ -144,8 +144,8 @@
             background-color: rgba(255,255,255,1);
         }
         .titleBtn {
-			color: #000;
-		}
+            color: #000;
+        }
         .navDots .navDotsNav {
             opacity: 1.0;
             text-shadow:
@@ -170,245 +170,245 @@
             font-weight: 400 !important;
         }
         h2 {
-			color: #000;
-			font-size: 0.8em;
-		}
+            color: #000;
+            font-size: 0.8em;
+        }
         h3 {
-			color: #000;
-			font-size: 1em;
-		}
+            color: #000;
+            font-size: 1em;
+        }
     </style>
-	</head>
-	<body class="claro">
-		<!-- Builder top panel is injected here -->
-		<div id="builderPanel" class="hide mainViewAboveMap"></div>
-		
-		<!-- Content -->
-		<div id="contentPanel" class="mobileView">
-			<table class="containerPanelInner">
-				<tr>
-					<!-- Text panel of the Side Panel layout -->
-					<td id="sidePanel">
-						<div id="sidePanelInner" class="mainViewSideMap sidePanel sectionPanel">
-							<div class="navDots vertical">
-								<!-- navigation dots -->
-							</div>
-							<div class="header" aria-hidden="true">
-								<div class="linkSocialContainer">
-									<span class="linkContainer"></span>
-									<span class="shareBtns">
-										<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
-										<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
-										<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
-										<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
-									</span>
-								</div>
-								<table class="logoContainer">
-									<tr>
-										<td class="logoWrapper">
-											<a class="logoLink" target="_blank" tabindex="-1">
-												<img class="logoImg"/>
-											</a>
-										</td>
-									</tr>
-								</table>
-							</div>
-							<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
-							<div class="separator"></div>
-							<div class="sectionsWrapper">
-								<div class="panelEditBtn">
-									<div class="panelEditBtnInner"></div>
-								</div>
-								<div class="sections">
-									<!-- sections injected here -->
-								</div>
-							</div>
-							<div class="builder builder-content-panel">
-								<div class="builder-content-panel-group builder-add">
-									<div class="builder-btn"></div>
-									<div class="builder-lbl"></div>
-								</div>
-								<div class="builder-content-panel-group builder-organize">
-									<div class="builder-btn"></div>
-									<div class="builder-lbl"></div>
-								</div>
-							</div>
-							<!-- <div class="resizer"></div> -->
-							<div class="scroll">
-								<div class="scrollInner" data-toggle="tooltip"></div>
-							</div>
-							<div class="builder-mask"></div>
-							<div class="firstAddExplain"></div>
-						</div>
-					</td>
-					<!-- Map -->
-					<td id="mainStagePanel">
-						<div id="mainStagePanelInner">
-							<div class="medias">
-								<!-- Maps and media injected here -->
-							</div>
-							<div id="mainStageLoadingIndicator" class="loadingIndicator">
-								<img src="resources/tpl/viewer/icons/loading-light.gif" />
-							</div>
-							<!-- Back button -->
-							<div class="mediaBackContainer">
-								<div class="backButton">
-									<div class="backArrow"></div>
-									<span class="backLbl"></span>
-								</div>
-							</div>
-							<!-- Builder -->
-							<div id="builderQuotes" class="centerAlignOnFloat"></div>
-							<div id="builderLanding" class="centerAlignOnFloat"></div>
-							<div id="builderHelp" class="centerAlignOnFloat"></div>
-							<div class="firstAddExplain"></div>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<!-- /Content -->
-		
-		<div id="floatingPanel" class="floatingPanel sectionPanel">
-			<div class="backdrop"></div>
-			<div class="header" aria-hidden="true">
-				<div class="linkSocialContainer">
-					<span class="linkContainer"></span>
-					<span class="shareBtns">
-						<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
-						<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
-						<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
-						<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
-					</span>
-				</div>
-				<table class="logoContainer">
-					<tr>
-						<td class="logoWrapper">
-							<a class="logoLink" target="_blank" tabindex="-1">
-								<img class="logoImg"/>
-							</a>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
-			<div class="separator"></div>
-			<div class="panelEditBtn">
-				<div class="panelEditBtnInner"></div>
-			</div>
-			<div class="sections">
-				<div class="swiper-container">
-					<div class="swiper-wrapper">
-						<!-- sections injected here -->
-					</div>
-				</div>
-			</div>
-			<div class="builder builder-content-panel">
-				<div class="builder-content-panel-group builder-add">
-					<div class="builder-btn"></div>
-					<div class="builder-lbl"></div>
-				</div>
-				<div class="builder-content-panel-group builder-organize">
-					<div class="builder-btn"></div>
-					<div class="builder-lbl"></div>
-				</div>
-			</div>
-			<div class="navDots vertical">
-				<!-- navigation dots -->
-			</div>
-			<div class="scroll">
-				<div class="scrollInner" data-toggle="tooltip"></div>
-			</div>
-			<div class="builder-mask"></div>
-			<div class="firstAddExplain"></div>
-		</div>
-		
-		<!-- Mobile -->
-		<div id="mobileView" class="floatingSwiper">
-			<div class="swiper-container">
-				<div class="backdrop"></div>
-				<div class="embed-btn-container embed-btn-left">
-					<div class="embed-btn"></div>
-				</div>
-				<div class="swiper-wrapper">
-					<!-- sections injected here -->
-				</div>
-				<div class="embed-btn-container embed-btn-right">
-					<div class="embed-btn"></div>
-				</div>
-			</div>
-			<div class="header">
-				<div class="backdrop"></div>
-				<div class="linkSocialContainer">
-					<span class="linkContainer"></span>
-					<span class="shareBtns">
-						<i class="shareIcon share_facebook icon-facebook-squared"></i>
-						<i class="shareIcon share_twitter icon-twitter"></i>
-						<i class="shareIcon share_bitly icon-link"></i>
-					</span>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div id="loadingOverlay"></div>
-		<div id="loadingIndicator" class="loadingIndicator">
-			<img src="resources/tpl/viewer/icons/loading-light.gif" />
-		</div>
-		<div id="loadingMessage"></div>
-		
-		<!-- Share dialog -->
-		<div class="modal fade shareDialog" id="shareDialog" role="dialog" data-backdrop="static" tabindex="-1"></div>
-		
-		<!-- Builder views are injected here -->
-		<div id="builder-views"></div>
-		
-		<!-- Fatal error box -->
-		<div id="fatalError">
-			<table border="0">
-				<tr>
-					<td width="70px" align="center" id="fatalError-icon"></td>
-					<td id="fatalError-msg">
-						<b class="error-title"></b>
-						<p class="error-msg"></p>
-					</td>
-				</tr>
-			</table>
-		</div>
-		
-		<script type="text/javascript" src="app/main-config.js"></script>
-		<script type="text/javascript">
-			require(["dojo/topic"], function(topic) {
-				/*
-				 * Custom Javascript to be executed while the application is initializing goes here
-				 */
-				 
-				 var handleEnterKeyAsClick = function(evt) {
-					if(evt.keyCode === 13) {
-						$(this).trigger("click");
-					}
-				 }
-				
-				// The application is ready
-				topic.subscribe("tpl-ready", function(){
-					/*
-					 * Custom Javascript to be executed when the application is ready goes here
-					 */
-					 
-					 // Make each text section able to reach focus programatically
-					 $("div.section").attr('tabIndex',-1);
-					 
-					 // Make the navigation dots keyboard accessible
-					$(".navDotsUp,.navDotsDown,.dot")
-						.attr('tabIndex',0)
-						.attr('role','button')
-						.on('keypress',function(evt) {
-							if(evt.keyCode === 13) {
-								this.click();
-								$(".section.active").focus();
-							}
-						});
-					// Make the navigation dots have proper labels
+    </head>
+    <body class="claro">
+        <!-- Builder top panel is injected here -->
+        <div id="builderPanel" class="hide mainViewAboveMap"></div>
+        
+        <!-- Content -->
+        <div id="contentPanel" class="mobileView">
+            <table class="containerPanelInner">
+                <tr>
+                    <!-- Text panel of the Side Panel layout -->
+                    <td id="sidePanel">
+                        <div id="sidePanelInner" class="mainViewSideMap sidePanel sectionPanel">
+                            <div class="navDots vertical">
+                                <!-- navigation dots -->
+                            </div>
+                            <div class="header" aria-hidden="true">
+                                <div class="linkSocialContainer">
+                                    <span class="linkContainer"></span>
+                                    <span class="shareBtns">
+                                        <i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
+                                        <i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
+                                        <i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
+                                        <button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
+                                    </span>
+                                </div>
+                                <table class="logoContainer">
+                                    <tr>
+                                        <td class="logoWrapper">
+                                            <a class="logoLink" target="_blank" tabindex="-1">
+                                                <img class="logoImg"/>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="appTitle" tabindex="-1" aria-hidden="true"></div>
+                            <div class="separator"></div>
+                            <div class="sectionsWrapper">
+                                <div class="panelEditBtn">
+                                    <div class="panelEditBtnInner"></div>
+                                </div>
+                                <div class="sections">
+                                    <!-- sections injected here -->
+                                </div>
+                            </div>
+                            <div class="builder builder-content-panel">
+                                <div class="builder-content-panel-group builder-add">
+                                    <div class="builder-btn"></div>
+                                    <div class="builder-lbl"></div>
+                                </div>
+                                <div class="builder-content-panel-group builder-organize">
+                                    <div class="builder-btn"></div>
+                                    <div class="builder-lbl"></div>
+                                </div>
+                            </div>
+                            <!-- <div class="resizer"></div> -->
+                            <div class="scroll">
+                                <div class="scrollInner" data-toggle="tooltip"></div>
+                            </div>
+                            <div class="builder-mask"></div>
+                            <div class="firstAddExplain"></div>
+                        </div>
+                    </td>
+                    <!-- Map -->
+                    <td id="mainStagePanel">
+                        <div id="mainStagePanelInner">
+                            <div class="medias">
+                                <!-- Maps and media injected here -->
+                            </div>
+                            <div id="mainStageLoadingIndicator" class="loadingIndicator">
+                                <img src="resources/tpl/viewer/icons/loading-light.gif" />
+                            </div>
+                            <!-- Back button -->
+                            <div class="mediaBackContainer">
+                                <div class="backButton">
+                                    <div class="backArrow"></div>
+                                    <span class="backLbl"></span>
+                                </div>
+                            </div>
+                            <!-- Builder -->
+                            <div id="builderQuotes" class="centerAlignOnFloat"></div>
+                            <div id="builderLanding" class="centerAlignOnFloat"></div>
+                            <div id="builderHelp" class="centerAlignOnFloat"></div>
+                            <div class="firstAddExplain"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- /Content -->
+        
+        <div id="floatingPanel" class="floatingPanel sectionPanel">
+            <div class="backdrop"></div>
+            <div class="header" aria-hidden="true">
+                <div class="linkSocialContainer">
+                    <span class="linkContainer"></span>
+                    <span class="shareBtns">
+                        <i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
+                        <i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
+                        <i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
+                        <button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
+                    </span>
+                </div>
+                <table class="logoContainer">
+                    <tr>
+                        <td class="logoWrapper">
+                            <a class="logoLink" target="_blank" tabindex="-1">
+                                <img class="logoImg"/>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="appTitle" tabindex="-1" aria-hidden="true"></div>
+            <div class="separator"></div>
+            <div class="panelEditBtn">
+                <div class="panelEditBtnInner"></div>
+            </div>
+            <div class="sections">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- sections injected here -->
+                    </div>
+                </div>
+            </div>
+            <div class="builder builder-content-panel">
+                <div class="builder-content-panel-group builder-add">
+                    <div class="builder-btn"></div>
+                    <div class="builder-lbl"></div>
+                </div>
+                <div class="builder-content-panel-group builder-organize">
+                    <div class="builder-btn"></div>
+                    <div class="builder-lbl"></div>
+                </div>
+            </div>
+            <div class="navDots vertical">
+                <!-- navigation dots -->
+            </div>
+            <div class="scroll">
+                <div class="scrollInner" data-toggle="tooltip"></div>
+            </div>
+            <div class="builder-mask"></div>
+            <div class="firstAddExplain"></div>
+        </div>
+        
+        <!-- Mobile -->
+        <div id="mobileView" class="floatingSwiper">
+            <div class="swiper-container">
+                <div class="backdrop"></div>
+                <div class="embed-btn-container embed-btn-left">
+                    <div class="embed-btn"></div>
+                </div>
+                <div class="swiper-wrapper">
+                    <!-- sections injected here -->
+                </div>
+                <div class="embed-btn-container embed-btn-right">
+                    <div class="embed-btn"></div>
+                </div>
+            </div>
+            <div class="header">
+                <div class="backdrop"></div>
+                <div class="linkSocialContainer">
+                    <span class="linkContainer"></span>
+                    <span class="shareBtns">
+                        <i class="shareIcon share_facebook icon-facebook-squared"></i>
+                        <i class="shareIcon share_twitter icon-twitter"></i>
+                        <i class="shareIcon share_bitly icon-link"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="loadingOverlay"></div>
+        <div id="loadingIndicator" class="loadingIndicator">
+            <img src="resources/tpl/viewer/icons/loading-light.gif" />
+        </div>
+        <div id="loadingMessage"></div>
+        
+        <!-- Share dialog -->
+        <div class="modal fade shareDialog" id="shareDialog" role="dialog" data-backdrop="static" tabindex="-1"></div>
+        
+        <!-- Builder views are injected here -->
+        <div id="builder-views"></div>
+        
+        <!-- Fatal error box -->
+        <div id="fatalError">
+            <table border="0">
+                <tr>
+                    <td width="70px" align="center" id="fatalError-icon"></td>
+                    <td id="fatalError-msg">
+                        <b class="error-title"></b>
+                        <p class="error-msg"></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <script type="text/javascript" src="app/main-config.js"></script>
+        <script type="text/javascript">
+            require(["dojo/topic"], function(topic) {
+                /*
+                 * Custom Javascript to be executed while the application is initializing goes here
+                 */
+                 
+                 var handleEnterKeyAsClick = function(evt) {
+                    if(evt.keyCode === 13) {
+                        $(this).trigger("click");
+                    }
+                 }
+                
+                // The application is ready
+                topic.subscribe("tpl-ready", function(){
+                    /*
+                     * Custom Javascript to be executed when the application is ready goes here
+                     */
+                     
+                     // Make each text section able to reach focus programatically
+                     $("div.section").attr('tabIndex',-1);
+                     
+                     // Make the navigation dots keyboard accessible
+                    $(".navDotsUp,.navDotsDown,.dot")
+                        .attr('tabIndex',0)
+                        .attr('role','button')
+                        .on('keypress',function(evt) {
+                            if(evt.keyCode === 13) {
+                                this.click();
+                                $(".section.active").focus();
+                            }
+                        });
+                    // Make the navigation dots have proper labels
                     $(".navDotsUp,.navDotsDown,.dot").each(function() {
                         var that = $(this);
                         // If we set a title it shows up in addition to the fancy alt text
@@ -416,87 +416,87 @@
                         that.removeAttr('title');
                         that.attr('aria-label',that.attr('data-original-title'));
                         if(that.hasClass('navDotsUp'))
-						    that.attr('title',i18n.viewer.customAgs.previousButton);
-						else if(that.hasClass('navDotsDown'))
-						    that.attr('title',i18n.viewer.customAgs.nextButton);
+                            that.attr('title',i18n.viewer.customAgs.previousButton);
+                        else if(that.hasClass('navDotsDown'))
+                            that.attr('title',i18n.viewer.customAgs.nextButton);
                     });
-					
-					// Add a link to the end of each section to move focus to the media container
-					$("div.section > div.content").prepend("<div class='skiptomain'>" + i18n.viewer.customAgs.moveToDiv + "</div>");
-					$("div.content > div.skiptomain").attr('tabIndex',0).on('keypress',function(evt) {
-						if(evt.keyCode === 13) {
-							$(".mainMediaContainer.active div.skiptomain").focus();
-						}
-					});
+                    
+                    // Add a link to the end of each section to move focus to the media container
+                    $("div.section > div.content").prepend("<div class='skiptomain'>" + i18n.viewer.customAgs.moveToDiv + "</div>");
+                    $("div.content > div.skiptomain").attr('tabIndex',0).on('keypress',function(evt) {
+                        if(evt.keyCode === 13) {
+                            $(".mainMediaContainer.active div.skiptomain").focus();
+                        }
+                    });
 
-					// Add a link to the beginning of each media container to move focus back to it's section
-					$("div.mainMediaContainer").prepend("<div class='skiptomain'>" + i18n.viewer.customAgs.moveBackDiv + "</div>");
-					$("div.mainMediaContainer > div.skiptomain").attr('tabIndex',0).on('keypress', function(evt) {
-						if(evt.keyCode === 13) {
-							$(".section.active").focus();
-						} else if(evt.shiftKey && evt.keyCode === 9) {
+                    // Add a link to the beginning of each media container to move focus back to it's section
+                    $("div.mainMediaContainer").prepend("<div class='skiptomain'>" + i18n.viewer.customAgs.moveBackDiv + "</div>");
+                    $("div.mainMediaContainer > div.skiptomain").attr('tabIndex',0).on('keypress', function(evt) {
+                        if(evt.keyCode === 13) {
+                            $(".section.active").focus();
+                        } else if(evt.shiftKey && evt.keyCode === 9) {
                             // If they shift tab while on this element, move back as if they clicked it
                             // Return false to consume the tab keypress 
                             $(".section.active").focus();
                             return false;
                         }
-					});
+                    });
 
-					// Remove the blue 'Down' arrow 
-					$(".scrollInner").remove();
+                    // Remove the blue 'Down' arrow 
+                    $(".scrollInner").remove();
 
-					// <p>,<ul>,<ol>,<h3> elements are given a tabindex by ESRI's code.  They shouldnt.
-					$("div.content p,div.content ul,div.content ol,div.content h3").removeAttr('tabindex');
+                    // <p>,<ul>,<ol>,<h3> elements are given a tabindex by ESRI's code.  They shouldnt.
+                    $("div.content p,div.content ul,div.content ol,div.content h3").removeAttr('tabindex');
 
                     // Titles for each section should be a <h2> for screen readers
                     $("div.title").each(function() {
-						this.innerHTML = "<h2>" + this.textContent + "</h2>";
-					});
+                        this.innerHTML = "<h2>" + this.textContent + "</h2>";
+                    });
 
                     // The floating title needs to be a <h1> for screen readers
                     $("div.appTitle").each(function() {
-						this.innerHTML = "<h1 class='floatingTitle'>" + this.textContent + "</h1>";
-					});
+                        this.innerHTML = "<h1 class='floatingTitle'>" + this.textContent + "</h1>";
+                    });
 
                     // Remove the mobile version of the site
                     // Screen readers can see it and will read out 
                     $("#mobileView").attr('aria-hidden','true');
                     $("#mobileView").attr('hidden','hidden');
-				});
+                });
 
 
-				// This event fires after a map is loaded in the media panel
-				topic.subscribe("story-loaded-map", function(result){
-					
-					// Make the zoom out/zoom in/home buttons keyboard accessible
-					// Note that selecting .esriSimpleSliderIncrementButton selects Zoom in AND Home
-					$(".esriSimpleSliderIncrementButton, .esriSimpleSliderDecrementButton")
-						.attr('tabindex',0)
-						.on('keypress',handleEnterKeyAsClick)
-						.attr('role','button');
-					$(".esriSimpleSliderIncrementButton:has(div)").attr('title',i18n.viewer.customAgs.homeButton);
+                // This event fires after a map is loaded in the media panel
+                topic.subscribe("story-loaded-map", function(result){
+                    
+                    // Make the zoom out/zoom in/home buttons keyboard accessible
+                    // Note that selecting .esriSimpleSliderIncrementButton selects Zoom in AND Home
+                    $(".esriSimpleSliderIncrementButton, .esriSimpleSliderDecrementButton")
+                        .attr('tabindex',0)
+                        .on('keypress',handleEnterKeyAsClick)
+                        .attr('role','button');
+                    $(".esriSimpleSliderIncrementButton:has(div)").attr('title',i18n.viewer.customAgs.homeButton);
 
-					// The above doesn't work in IE10 on specifically the +/- buttons.  So write the function by hand
-					$(".esriSimpleSliderIncrementButton").has('span').on('keypress', function() {
-						app.map.setZoom(app.map.getZoom()+1);
-					});
-					$(".esriSimpleSliderDecrementButton").has('span').on('keypress', function() {
-						app.map.setZoom(app.map.getZoom()-1);
-					});
+                    // The above doesn't work in IE10 on specifically the +/- buttons.  So write the function by hand
+                    $(".esriSimpleSliderIncrementButton").has('span').on('keypress', function() {
+                        app.map.setZoom(app.map.getZoom()+1);
+                    });
+                    $(".esriSimpleSliderDecrementButton").has('span').on('keypress', function() {
+                        app.map.setZoom(app.map.getZoom()-1);
+                    });
 
-					// Make the close keys on windows keyboard accessible
-					$(".close")
-						.attr('tabindex',0)
-						.attr('role','button')
-						.attr('title',i18n.viewer.common.close)
-						.on('keypress',handleEnterKeyAsClick);
+                    // Make the close keys on windows keyboard accessible
+                    $(".close")
+                        .attr('tabindex',0)
+                        .attr('role','button')
+                        .attr('title',i18n.viewer.common.close)
+                        .on('keypress',handleEnterKeyAsClick);
 
-					// Make the expand/contract icons on windows keyboard accessible
-					$(".glyphicon-chevron-up, .glyphicon-chevron-down")
-						.attr('tabindex',0)
-						.attr('role','button')
-						.attr('title',i18n.viewer.customAgs.toggleChevron)
-						.on('keypress',handleEnterKeyAsClick);
+                    // Make the expand/contract icons on windows keyboard accessible
+                    $(".glyphicon-chevron-up, .glyphicon-chevron-down")
+                        .attr('tabindex',0)
+                        .attr('role','button')
+                        .attr('title',i18n.viewer.customAgs.toggleChevron)
+                        .on('keypress',handleEnterKeyAsClick);
 
                     // Loading indicator needs alt text
                     $(".loadingIndicator img").attr('alt',i18n.viewer.loading.step1);
@@ -561,13 +561,13 @@
                     });
 
 
-					if ( result.index !== null )
-					  console.log("The map", result.id, "has been loaded from the section", result.index);
-					else
-					  console.log("The map", result.id, "has been loaded from a Main Stage Action");
-				});
-				
-			});
-		</script>
-	</body>
+                    if ( result.index !== null )
+                      console.log("The map", result.id, "has been loaded from the section", result.index);
+                    else
+                      console.log("The map", result.id, "has been loaded from a Main Stage Action");
+                });
+                
+            });
+        </script>
+    </body>
 </html>
