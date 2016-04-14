@@ -465,8 +465,7 @@
 				});
 
 
-				// The map's zoom buttons/etc don't exist until it is loaded
-				// So add the necessary WCAG stuff to each map after it's loaded
+				// This event fires after a map is loaded in the media panel
 				topic.subscribe("story-loaded-map", function(result){
 					
 					// Make the zoom out/zoom in/home buttons keyboard accessible
