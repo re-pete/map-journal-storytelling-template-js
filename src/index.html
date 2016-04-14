@@ -501,6 +501,18 @@
                     // Loading indicator needs alt text
                     $(".loadingIndicator img").attr('alt',i18n.viewer.loading.step1);
 
+                    // Some images and icons get added without alt tags
+                    // This should fix them
+                    var updateLayerImagesWithAltTags = function() {
+                        $("image:not([alt])").attr('alt','');
+                        $("img:not([alt])").attr('alt','');
+                        console.log('updating alt tags');
+                    }
+                    // Run this once now, then again whenever the map loads
+                    // This catches things like if you pan into new icons/images
+                    updateLayerImagesWithAltTags();
+                    app.map.on('update-end',updateLayerImagesWithAltTags);
+
                     // Remove images that have no 'src' - logoImg
                     $("img.logoImg").remove();
                     
