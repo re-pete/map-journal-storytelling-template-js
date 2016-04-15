@@ -119,12 +119,15 @@
             position:absolute;
             color: rgba(255,255,255,0);
             background-color: rgba(0,0,0,0);
-            height: 20px;
-            width: 1px;
+            overflow: hidden; 
+            clip: rect(0 0 0 0); 
+            height: 1px;
+            width: 1px; 
+            margin: -1px; 
+            padding: 0; 
+            border: 0;
             text-align: left;
-            overflow: hidden;
             z-index: 100;
-            padding: 5px;
         }
         
         div.skiptomain:active, 
@@ -132,9 +135,14 @@
         div.skiptomain:hover {
             color: rgba(255,255,255,1);
             background-color: rgba(0,0,0,1);
-            width: auto; 
-            height: auto; 
             overflow: visible; 
+            clip: auto; 
+            height: 20px;
+            width: auto; 
+            margin: 5px; 
+            padding: 5px;
+            border: auto;
+        }
         }
         .navDotsInner {
             background-color: #bbb;
