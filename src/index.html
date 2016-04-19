@@ -397,7 +397,7 @@
                     if(evt.keyCode === 13) {
                         $(this).trigger("click");
                     }
-                 }
+                 };
                 
                 // The application is ready
                 topic.subscribe("tpl-ready", function(){
@@ -492,16 +492,20 @@
                     // Note that selecting .esriSimpleSliderIncrementButton selects Zoom in AND Home
                     $(".esriSimpleSliderIncrementButton, .esriSimpleSliderDecrementButton")
                         .attr('tabindex',0)
-                        .on('keypress',handleEnterKeyAsClick)
                         .attr('role','button');
-                    $(".esriSimpleSliderIncrementButton:has(div)").attr('title',i18n.viewer.customAgs.homeButton);
+                    // This selects only the home button
+                    $(".esriSimpleSliderIncrementButton:has(div)").attr('title',i18n.viewer.customAgs.homeButton).on('keypress',handleEnterKeyAsClick);
 
-                    // The above doesn't work in IE10 on specifically the +/- buttons.  So write the function by hand
-                    $(".esriSimpleSliderIncrementButton").has('span').on('keypress', function() {
+                    // The handleEnterKeyAsClick doesn't work in IE10 on specifically the +/- buttons.  So write the function by hand
+                    $(".esriSimpleSliderIncrementButton").has('span').on('keypress', function(evt) {
+                        if(evt.keyCode === 13) {
                         app.map.setZoom(app.map.getZoom()+1);
+                        }
                     });
-                    $(".esriSimpleSliderDecrementButton").has('span').on('keypress', function() {
+                    $(".esriSimpleSliderDecrementButton").has('span').on('keypress', function(evt) {
+                        if(evt.keyCode === 13) {
                         app.map.setZoom(app.map.getZoom()-1);
+                        }
                     });
 
                     // Make the close keys on windows keyboard accessible
