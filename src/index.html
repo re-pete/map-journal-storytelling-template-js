@@ -191,7 +191,7 @@
     </head>
     <body class="claro">
         <!-- Builder top panel is injected here -->
-        <div id="builderPanel" class="hide mainViewAboveMap"></div>
+        <div id="builderPanel" class="hide mainViewAboveMap" hidden></div>
         
         <!-- Content -->
         <div id="contentPanel" class="mobileView">
@@ -279,7 +279,7 @@
         </div>
         <!-- /Content -->
         
-        <div id="floatingPanel" class="floatingPanel sectionPanel">
+        <div id="floatingPanel" class="floatingPanel sectionPanel" hidden>
             <div class="backdrop"></div>
             <div class="header" aria-hidden="true">
                 <div class="linkSocialContainer">
@@ -334,7 +334,7 @@
         </div>
         
         <!-- Mobile -->
-        <div id="mobileView" class="floatingSwiper">
+        <div id="mobileView" class="floatingSwiper" hidden>
             <div class="swiper-container">
                 <div class="backdrop"></div>
                 <div class="embed-btn-container embed-btn-left">
@@ -481,7 +481,15 @@
                     // Remove the mobile version of the site
                     // Screen readers can see it and will read out 
                     $("#mobileView").attr('aria-hidden','true');
-                    $("#mobileView").attr('hidden','hidden');
+                    
+                    // Convert hidden headers to divs (mobile headers, floating panel headers)
+                    for(var i = 1; i < 7; i++) {
+                        $("#mobileView h"+i).replaceWith(function(){return '<div>' + this.innerHTML + '</div>';});
+                        $("#floatingPanel h"+i).replaceWith(function(){return '<div>' + this.innerHTML + '</div>';});
+                    }
+                    // Update other useless, empty headers
+                    $("#shareDialog h4").replaceWith(function(){return '<div>' + this.innerHTML + '</div>';});
+                    
                 });
 
 
