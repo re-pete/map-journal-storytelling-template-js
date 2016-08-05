@@ -80,7 +80,8 @@ define({
 				nextButton: "Next",
 				toggleChevron: "Expand/minimize",
 				moveToDiv: "Move focus to main content",
-				moveBackDiv: "Move focus back to side panel"
+				moveBackDiv: "Move focus back to side panel",
+                mainHeader: "Created by AAFC"
 			}
         }
     }),

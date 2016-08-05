@@ -80,7 +80,8 @@
 				nextButton: "Suivant",
 				toggleChevron: "{fr}Expand/minimize",
 				moveToDiv: "{fr}Move focus to main content",
-				moveBackDiv: "{fr}Move focus back to side panel"
+				moveBackDiv: "{fr}Move focus back to side panel",
+                mainHeader: "{fr}Created by AAFC"
 			}
         }
     })
