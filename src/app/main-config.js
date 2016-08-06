@@ -44,8 +44,24 @@ function defineDojoConfig()
 
 	var appIdEn = configOptions.appidEn;
 	var appIdFr = configOptions.appidFr;
+    
+    // Allow the querystring to override the config file
+    var appIdEnQS = getUrlVar('appIdEn');
+    var appIdFrQS = getUrlVar('appIdFr');
+    if(appIdEnQS) {
+        appIdEn = appIdEnQS;
+    }
+    if(appIdFrQS) {
+        appIdFr = appIdFrQS;
+    }
+    // Get the language/locale settings from the querystring
 	var lang = getUrlVar('lang');
 	var locale = lang === 'fr' ? 'fr' : 'en';
+    // Update the Francias/English link 
+    if(appIdFrQS || appIdEnQS) {
+        var oppositeLocale = locale === 'en' ? 'fr' : 'en';
+        $("#gcwu-gcnb-lang a").attr('href','?lang=' + oppositeLocale + '&appIdEn=' + appIdEn + '&appIdFr=' + appIdFr);
+    }
 	var appId = '';
 	if(appIdFr && locale === 'fr') {
 		appId = appIdFr;
