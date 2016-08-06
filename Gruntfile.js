@@ -158,6 +158,14 @@
 						dest: 'deploy/'
 					}]
 				},
+				properties: {
+					files: [{
+						expand: true,
+						cwd: 'src',
+						src:['*.properties'],
+						dest: 'deploy/'
+					}]
+				},
 				resources: {
 					files: [{
 						expand: true,
@@ -422,6 +430,9 @@
 			
 			// Copy html
 			'copy:html',
+			
+			// Copy properties
+			'copy:properties',
 			
 			// Copy main
 			'copy:main',
