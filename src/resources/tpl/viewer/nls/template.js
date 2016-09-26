@@ -81,7 +81,7 @@ define({
 				toggleChevron: "Expand/minimize",
 				moveToDiv: "Move focus to main content",
 				moveBackDiv: "Move focus back to side panel",
-                mainHeader: "Created by AAFC"
+                mainHeader: "Created by AAFC-AAC"
 			}
         }
     }),

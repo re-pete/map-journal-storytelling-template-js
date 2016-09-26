@@ -78,10 +78,10 @@
 				homeButton: "Etendue par défaut",
 				previousButton: "Précédent",
 				nextButton: "Suivant",
-				toggleChevron: "{fr}Expand/minimize",
-				moveToDiv: "{fr}Move focus to main content",
-				moveBackDiv: "{fr}Move focus back to side panel",
-                mainHeader: "{fr}Created by AAFC"
+				toggleChevron: "Développer/Réduire",
+				moveToDiv: "Activer le contenu principal",
+				moveBackDiv: "Activer le volet de navigation",
+                mainHeader: "Créé par AAFC-AAC"
 			}
         }
     })
