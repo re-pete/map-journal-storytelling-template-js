@@ -87,6 +87,15 @@
 				autoplayExplain1: "Le mode de lecture automatique fait avancer votre récit à intervalle régulier. Il est idéal pour les écrans publics, mais, dans d\'autres cas, il peut compliquer la lecture du récit. Cette fonctionnalité n\'est pas prise en charge sur les petits écrans.",
 				autoplayExplain2: "Lorsque ce mode est actif, vous disposez de contrôles pour lire le récit ou le mettre en pause, ainsi que régler la vitesse de navigation.",
 				linksupdated: "Liens mis à jour"
+			},
+			customAgs: {
+				homeButton: "Etendue par défaut",
+				previousButton: "Précédent",
+				nextButton: "Suivant",
+				toggleChevron: "Développer/Réduire",
+				moveToDiv: "Activer le contenu principal",
+				moveBackDiv: "Activer le volet de navigation",
+                mainHeader: "Créé par AAFC-AAC"
 			}
         }
     })

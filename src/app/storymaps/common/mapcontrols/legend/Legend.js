@@ -44,8 +44,9 @@ define(["lib-build/tpl!./Legend",
 					color: appColors.text
 				});
 				
-				container.find(".titleBtn").css("color", appColors.softText);
-				container.find(".settingsGear, .collapseBtn").css("color", appColors.softBtn);
+				// PK - disabling this because it overwrites styles from CSS
+				//container.find(".titleBtn").css("color", appColors.softText);
+				//container.find(".settingsGear, .collapseBtn").css("color", appColors.softBtn);
 			};
 			
 			function display()

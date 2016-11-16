@@ -24,7 +24,8 @@ define(["lib-build/css!./MapCommand",
 			var tsUpdateStart = 0;
 			var homeButton = $('<div class="esriSimpleSliderIncrementButton"><div class="mapCommandHomeBtn"></div></div>');
 			var locateSymbol = new PictureMarkerSymbol('app/storymaps/common/_resources/icons/mapcommand-location-marker.png', 21, 21);
-			var locateLayer = new GraphicsLayer({id: 'locateLayer'});
+			// PK - this adds multiple elements to DOM with the same ID - fails WCAG
+			var locateLayer = new GraphicsLayer({id: 'locateLayer' + map.id});
 			
 			homeButton.click(function(){
 				// Prevent using the home button while it's spinning
@@ -126,7 +127,7 @@ define(["lib-build/css!./MapCommand",
 				locateLayer.clear();
 				locateLayer.add(new Graphic( point, locateSymbol ));
 				setTimeout(function(){
-					$('#locateLayer_layer image').fadeOut({
+					$('#locateLayer' + map.id + '_layer image').fadeOut({
 						duration: 800
 					});
 				}, 10000);

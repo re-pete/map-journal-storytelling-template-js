@@ -87,6 +87,15 @@ define({
 				autoplayExplain1: "Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays.",
 				autoplayExplain2: "When this mode is active there are controls to play/pause the story and adjust the navigation speed.",
 				linksupdated: "Links updated!"
+			},
+			customAgs: {
+				homeButton: "Default extent",
+				previousButton: "Previous",
+				nextButton: "Next",
+				toggleChevron: "Expand/minimize",
+				moveToDiv: "Move focus to main content",
+				moveBackDiv: "Move focus back to side panel",
+                mainHeader: "Created by AAFC-AAC"
 			}
         }
     }),
