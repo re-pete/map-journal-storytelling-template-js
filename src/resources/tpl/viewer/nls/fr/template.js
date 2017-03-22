@@ -104,6 +104,15 @@ define({
       "printWarning": "Il s'agit d'une version imprimée d'une Story Map. Le contenu dynamique, tel que les vidéos et les cartes interactives, est seulement disponible dans la version en ligne, accessible via le lien ${link}",
       "printMSWarning": "dans le récit en ligne uniquement",
       "printVideoWarning": "Cette vidéo peut être consultée dans la version en ligne de cette Story Map"
+    },
+    customAgs: {
+      homeButton: "Etendue par défaut",
+      previousButton: "Précédent",
+      nextButton: "Suivant",
+      toggleChevron: "Développer/Réduire",
+      moveToDiv: "Activer le contenu principal",
+      moveBackDiv: "Activer le volet de navigation",
+      mainHeader: "Créé par AAFC-AAC"
     }
   }
 });

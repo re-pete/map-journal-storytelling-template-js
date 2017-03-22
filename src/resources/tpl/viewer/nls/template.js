@@ -105,6 +105,15 @@ define({
 				printWarning: "This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}",
 				printMSWarning: "link available only in online story",
 				printVideoWarning: "This video can be viewed in the online version of this story map"
+			},
+			customAgs: {
+				homeButton: "Default extent",
+				previousButton: "Previous",
+				nextButton: "Next",
+				toggleChevron: "Expand/minimize",
+				moveToDiv: "Move focus to main content",
+				moveBackDiv: "Move focus back to side panel",
+				mainHeader: "Created by AAFC-AAC"
 			}
         }
     }),

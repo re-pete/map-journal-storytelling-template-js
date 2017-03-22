@@ -78,6 +78,11 @@ function defineDojoConfig()
 		]
 	};
 
+	// PK - we also want to search 'lang' for the locale
+	if (location.search.match(/lang=([\w\-]+)/)) {
+		window.dojoConfig.locale = RegExp.$1;
+	}
+
 	if (location.search.match(/locale=([\w\-]+)/)) {
 		window.dojoConfig.locale = RegExp.$1;
 	}
