@@ -84,12 +84,12 @@ define(["dojo/topic"], function(topic) {
     // <p>,<ul>,<ol>,<h3> elements are given a tabindex by ESRI's code.  They shouldnt.
     $("div.content p,div.content ul,div.content ol,div.content h3").removeAttr('tabindex');
     // Titles for each section should be a <h2> for screen readers
-    $("div.title").each(function() {
+    $(".sidePanel .section div.title").each(function() {
       this.innerHTML = "<h2>" + this.textContent + "</h2>";
     });
-    // The floating title needs to be a <h1> for screen readers
-    $("div.appTitle").each(function() {
-      this.innerHTML = "<h1 class='floatingTitle'>" + i18n.viewer.customAgs.mainHeader + "</h1>";
+    // But the first one should be an <h1>
+    $(".sidePanel .section:first-child div.title").each(function() {
+      this.innerHTML = "<h1>" + this.textContent + "</h1>";
     });
     // Remove the mobile version of the site
     // Screen readers can see it and will read out 
