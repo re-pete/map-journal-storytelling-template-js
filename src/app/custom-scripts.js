@@ -18,7 +18,7 @@ define(["dojo/topic"], function(topic) {
     $(".navDotsUp,.navDotsDown,.dot")
       .attr('tabIndex', 0)
       .attr('role', 'button')
-      .on('keypress', function(evt) {
+      .on('keydown', function(evt) {
         if (evt.keyCode === 13) {
           this.click();
           $(".section.active").focus();
@@ -50,7 +50,7 @@ define(["dojo/topic"], function(topic) {
       div.append(anchorToMain);
       return div;
     });
-    $("div.content > div.skiptomain").attr('tabIndex', 0).on('keypress', function(evt) {
+    $("div.content > div.skiptomain").attr('tabIndex', 0).on('keydown', function(evt) {
       if (evt.keyCode === 13) {
         $(".mainMediaContainer.active div.skiptomain").focus();
       }
@@ -69,12 +69,12 @@ define(["dojo/topic"], function(topic) {
       div.append(anchorToSide);
       return div;
     });
-    $("div.mainMediaContainer > div.skiptomain").attr('tabIndex', 0).on('keypress', function(evt) {
+    $("div.mainMediaContainer > div.skiptomain").attr('tabIndex', 0).on('keydown', function(evt) {
       if (evt.keyCode === 13) {
         $(".section.active").focus();
       } else if (evt.shiftKey && evt.keyCode === 9) {
         // If they shift tab while on this element, move back as if they clicked it
-        // Return false to consume the tab keypress 
+        // Return false to consume the tab keydown 
         $(".section.active").focus();
         return false;
       }
@@ -105,14 +105,14 @@ define(["dojo/topic"], function(topic) {
       .attr('tabindex', 0)
       .attr('role', 'button');
     // This selects only the home button
-    $(".esriSimpleSliderIncrementButton:has(div)").attr('title', i18n.viewer.customAgs.homeButton).on('keypress', handleEnterKeyAsClick);
+    $(".esriSimpleSliderIncrementButton:has(div)").attr('title', i18n.viewer.customAgs.homeButton).on('keydown', handleEnterKeyAsClick);
     // The handleEnterKeyAsClick doesn't work in IE10 on specifically the +/- buttons.  So write the function by hand
-    $(".esriSimpleSliderIncrementButton").has('span').on('keypress', function(evt) {
+    $(".esriSimpleSliderIncrementButton").has('span').on('keydown', function(evt) {
       if (evt.keyCode === 13) {
         app.map.setZoom(app.map.getZoom() + 1);
       }
     });
-    $(".esriSimpleSliderDecrementButton").has('span').on('keypress', function(evt) {
+    $(".esriSimpleSliderDecrementButton").has('span').on('keydown', function(evt) {
       if (evt.keyCode === 13) {
         app.map.setZoom(app.map.getZoom() - 1);
       }
@@ -122,13 +122,13 @@ define(["dojo/topic"], function(topic) {
       .attr('tabindex', 0)
       .attr('role', 'button')
       .attr('title', i18n.viewer.common.close)
-      .on('keypress', handleEnterKeyAsClick);
+      .on('keydown', handleEnterKeyAsClick);
     // Make the expand/contract icons on windows keyboard accessible
     $(".glyphicon-chevron-up, .glyphicon-chevron-down")
       .attr('tabindex', 0)
       .attr('role', 'button')
       .attr('title', i18n.viewer.customAgs.toggleChevron)
-      .on('keypress', handleEnterKeyAsClick);
+      .on('keydown', handleEnterKeyAsClick);
     // Loading indicator needs alt text
     $(".loadingIndicator img").attr('alt', i18n.viewer.loading.step1);
     // Some images and icons get added without alt tags
@@ -149,7 +149,7 @@ define(["dojo/topic"], function(topic) {
     $(".active .mapContainer.map").attr('tabindex', 0).on('keydown', function(evt) {
       // We only want to capture events on the map itself, not
       // any of the map's children.
-      if (evt.target.classList.contains('mapContainer') === false) {
+      if (evt.target.classList && evt.target.classList.contains('mapContainer') === false) {
         return;
       }
       // shorthand for less typing
