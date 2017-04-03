@@ -91,6 +91,11 @@ define(["dojo/topic"], function(topic) {
     $(".sidePanel .section:first-child div.title").each(function() {
       this.innerHTML = "<h1>" + this.textContent + "</h1>";
     });
+    // Update the parent window's title, if we're in an iframe
+    var titleText = $(".sidePanel .section:first-child div.title").text().trim();
+    if(window.parent !== window) {
+      $("title", window.parent.document).text(titleText);
+    }
     // Remove the mobile version of the site
     // Screen readers can see it and will read out 
     $("#mobileView").attr('aria-hidden', 'true');
