@@ -129,7 +129,7 @@ define(["dojo/topic"], function(topic) {
       .attr('title', i18n.viewer.common.close)
       .on('keydown', handleEnterKeyAsClick);
     // Make the expand/contract icons on windows keyboard accessible
-    $(".glyphicon-chevron-up, .glyphicon-chevron-down")
+    $(".legendContainer .titleBtn")
       .attr('tabindex', 0)
       .attr('role', 'button')
       .attr('title', i18n.viewer.customAgs.toggleChevron)
